@@ -15,5 +15,3 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/less/app.css', 'public/css', [
         //
     ]);
-
-mix.less('resources/less/app.less', 'public/css');
