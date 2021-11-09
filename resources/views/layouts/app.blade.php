@@ -26,7 +26,7 @@
             <div class="col-md-8 mt-5">
                 @yield('content')
             </div>
-            <div class="col-md-4 mt-5">
+            <div class="col-md-4">
                 @include('inc.aside')
             </div>
         @endif
