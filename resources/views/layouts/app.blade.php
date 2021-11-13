@@ -15,6 +15,9 @@
 
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            @include('inc.messages')
+        </div>
         @if(Request::is('/'))
             <div class="col-md-12">
                 @include('inc.hero')
@@ -26,7 +29,7 @@
             <div class="col-md-8 mt-5">
                 @yield('content')
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-5">
                 @include('inc.aside')
             </div>
         @endif
