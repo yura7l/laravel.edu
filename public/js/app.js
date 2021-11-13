@@ -2062,6 +2062,53 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var callbackForm = document.forms.callback;
+callbackForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var formData = new FormData(callbackForm),
+      url = callbackForm.getAttribute('action'),
+      data = formData,
+      options = {
+    method: 'POST',
+    body: data,
+    redirect: 'follow'
+  },
+      redirected = false;
+  fetch(url, options).then(function (response) {
+    if (response.redirected) {
+      redirected = true;
+    }
+
+    return response.text();
+  }).then(function (data) {
+    var errorsContainer = document.querySelector('#callback_errors'),
+        successContainer = document.querySelector('#callback_success');
+
+    if (redirected) {
+      var container = document.implementation.createHTMLDocument().documentElement;
+      container.innerHTML = data;
+      var errors = container.querySelector('#errors'),
+          success = container.querySelector('#success');
+
+      if (errors) {
+        errorsContainer.innerHTML = errors.innerHTML;
+        errorsContainer.classList.remove('d-none');
+        successContainer.classList.add('d-none');
+      } else if (success) {
+        successContainer.innerHTML = success.innerHTML;
+        successContainer.classList.remove('d-none');
+        errorsContainer.classList.add('d-none');
+        callbackForm.classList.add('d-none');
+      }
+    } else {
+      errorsContainer.classList.add('d-none');
+      console.log(data);
+    }
+  })["catch"](function (error) {
+    console.log(error);
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

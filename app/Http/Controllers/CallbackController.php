@@ -8,10 +8,11 @@ use Illuminate\Http\Request,
 
 class CallbackController extends Controller {
     public function submit(CallbackRequest $req) {
-        $allback = new Callback();
-        $allback->phone = $req->input('phone');
 
-        $allback->save();
+        $callback = new Callback();
+        $callback->phone = $req->input('phone');
+
+        $callback->save();
 
         return redirect()->route('home')->with('success', 'Your request was sent');
     }

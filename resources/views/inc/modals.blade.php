@@ -8,7 +8,9 @@
             </div>
             <div class="modal-body">
                 <p>Leave your phone and we will call you in 5 minutes!</p>
-                <form action="{{ route('callback-form') }}" method="post">
+                <div class="alert alert-danger mt-3 d-none" id="callback_errors"></div>
+                <div class="alert alert-success mt-3 d-none" id="callback_success"></div>
+                <form action="{{ route('callback-form') }}" method="post" name="callback" id="callback">
                     @csrf
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone</label>
