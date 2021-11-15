@@ -4,4 +4,37 @@ body {
 .contact__form {
   margin-top: 50px;
 }
+.news__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+  margin-bottom: 30px;
+}
+.news__item {
+  display: grid;
+  grid-template-columns: 300px auto;
+  align-items: center;
+  grid-column-gap: 10px;
+}
+.news__item-img img {
+  max-width: 100%;
+}
+.news__item-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+}
+.news__item-date {
+  font-size: 14px;
+  color: darkgrey;
+}
+.news__item-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: royalblue;
+  transition: color 0.3s;
+}
+.news__item-title:hover {
+  color: dodgerblue;
+}
 /*# sourceMappingURL=app.css.map */
