@@ -14,6 +14,9 @@
             <li>
                 <a href="{{ route('contacts') }}" class="nav-link link-dark">Contacts</a>
             </li>
+            <li>
+                <a href="{{ route('contact-list') }}" class="nav-link link-dark">Messages</a>
+            </li>
         </ul>
         @show
     </div>

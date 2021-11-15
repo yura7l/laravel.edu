@@ -5,6 +5,7 @@
                 <li><a href="{{ route('home') }}" class="nav-link px-2 text-white">Home</a></li>
                 <li><a href="{{ route('about') }}" class="nav-link px-2 text-white">About us</a></li>
                 <li><a href="{{ route('contacts') }}" class="nav-link px-2 text-white">Contacts</a></li>
+                <li><a href="{{ route('contact-list') }}" class="nav-link px-2 text-white">Messages</a></li>
             </ul>
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">

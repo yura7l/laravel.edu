@@ -16,7 +16,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            @include('inc.messages')
+            @include('inc.alerts')
         </div>
         @if(Request::is('/'))
             <div class="col-md-12">
