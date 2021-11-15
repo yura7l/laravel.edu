@@ -18,3 +18,5 @@ Route::get('/contacts/all', 'App\Http\Controllers\ContactsController@getList')->
 Route::post('/contacts/submit', 'App\Http\Controllers\ContactsController@submit')->name('contact-form');
 
 Route::post('/form/callback', 'App\Http\Controllers\CallbackController@submit')->name('callback-form');
+
+Route::get('/news', 'App\Http\Controllers\NewsController@getList')->name('news');

@@ -12,6 +12,9 @@
                 <a href="{{ route('about') }}" class="nav-link link-dark">About us</a>
             </li>
             <li>
+                <a href="{{ route('news') }}" class="nav-link link-dark">News</a>
+            </li>
+            <li>
                 <a href="{{ route('contacts') }}" class="nav-link link-dark">Contacts</a>
             </li>
             <li>

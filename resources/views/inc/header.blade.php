@@ -4,6 +4,7 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="{{ route('home') }}" class="nav-link px-2 text-white">Home</a></li>
                 <li><a href="{{ route('about') }}" class="nav-link px-2 text-white">About us</a></li>
+                <li><a href="{{ route('news') }}" class="nav-link px-2 text-white">News</a></li>
                 <li><a href="{{ route('contacts') }}" class="nav-link px-2 text-white">Contacts</a></li>
                 <li><a href="{{ route('contact-list') }}" class="nav-link px-2 text-white">Messages</a></li>
             </ul>
