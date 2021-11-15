@@ -20,3 +20,7 @@ Route::post('/contacts/submit', 'App\Http\Controllers\ContactsController@submit'
 Route::post('/form/callback', 'App\Http\Controllers\CallbackController@submit')->name('callback-form');
 
 Route::get('/news', 'App\Http\Controllers\NewsController@getList')->name('news');
+Route::get('/news/add', function () {
+    return view('news-add');
+})->name('news-add');
+Route::post('/news/add/submit', 'App\Http\Controllers\NewsController@submit')->name('news-add-submit');

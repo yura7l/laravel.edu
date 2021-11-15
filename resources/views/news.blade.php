@@ -3,16 +3,26 @@
 @section('title')All news | Laravel.edu @endsection
 
 @section('content')
-    <h1>All news</h1>
-    @if(count($data))
-        @foreach($data as $item)
-            <div class="alert alert-info">
-                <h3>{{ $item->name }}</h3>
-            </div>
-        @endforeach
-    @else
-        <div class="alert alert-warning">There's no news yet. We're working on this.</div>
-    @endif
+    <div class="news__list">
+        <h1>All news</h1>
+        @if(count($data))
+            @foreach($data as $item)
+                <div class="news__item">
+                    <div class="news__item-img">
+                        <img src="{{ $item->preview_image }}" alt="{{ $item->name }}">
+                    </div>
+                    <div class="news__item-body">
+                        <div class="news__item-date">{{ $item->active_from }}</div>
+                        <a href="javascript:void(0);" class="news__item-title">{{ $item->name }}</a>
+                        <div class="news__item-text">{{ $item->preview_text }}</div>
+                    </div>
+                </div>
+            @endforeach
+        @else
+            <div class="alert alert-warning">There's no news yet. We're working on this.</div>
+        @endif
+    </div>
+    <a href="{{ route('news-add') }}" class="btn btn-primary">Add news</a>
 @endsection
 
 @section('aside')
