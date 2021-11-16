@@ -16,7 +16,7 @@ Route::get('/contacts', function () {
 
 Route::get(
     '/contacts/all/{id}',
-    'App\Http\Controllers\ContactsController@getOne'
+    'App\Http\Controllers\ContactsController@getMessage'
 )->name('contact-single');
 Route::get(
     '/contacts/all',
@@ -26,6 +26,18 @@ Route::post(
     '/contacts/submit',
     'App\Http\Controllers\ContactsController@submit'
 )->name('contact-form');
+Route::get(
+    '/contacts/update/{id}',
+    'App\Http\Controllers\ContactsController@updateMessage'
+)->name('contact-update');
+Route::post(
+    '/contacts/update/{id}',
+    'App\Http\Controllers\ContactsController@updateMessageSubmit'
+)->name('contact-update-submit');
+Route::get(
+    '/contacts/delete/{id}',
+    'App\Http\Controllers\ContactsController@deleteMessage'
+)->name('contact-delete');
 
 Route::post(
     '/form/callback',

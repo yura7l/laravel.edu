@@ -41,9 +41,42 @@ class ContactsController extends Controller {
     /**
      * @param int $id - element ID
      */
-    public function getOne(int $id) {
+    public function getMessage(int $id) {
         $contacts = new Contacts();
         $data = $contacts->find($id);
         return view('one-message', ['data' => $data]);
+    }
+
+    /**
+     * @param int $id - element ID
+     */
+    public function updateMessage(int $id) {
+        $contacts = new Contacts();
+        $data = $contacts->find($id);
+        return view('update-message', ['data' => $data]);
+    }
+
+    /**
+     * @param int $id - element ID
+     * @param ContactsRequest $req - request data
+     */
+    public function updateMessageSubmit($id, ContactsRequest $req) {
+        $contacts = Contacts::find($id);
+        $contacts->name = $req->input('name');
+        $contacts->email = $req->input('email');
+        $contacts->message = $req->input('message');
+
+        $contacts->save();
+
+        return redirect()->route('contact-single', $id)->with('success', 'Message saved!');
+    }
+
+    /**
+     * @param int $id - element ID
+     */
+    public function deleteMessage($id) {
+        Contacts::find($id)->delete();
+
+        return redirect()->route('contact-list')->with('success', 'Message deleted!');
     }
 }

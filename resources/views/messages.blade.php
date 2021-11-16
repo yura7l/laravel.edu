@@ -8,7 +8,15 @@
         <div class="alert alert-info">
             <h3>{{ $item->name }}</h3>
             <p><small>{{ $item->created_at }}</small></p>
-            <a href="{{ route('contact-single', $item->id) }}" class="btn btn-primary">Read Message</a>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <a href="{{ route('contact-single', $item->id) }}" class="btn btn-primary">Read Message</a>
+                    <a href="{{ route('contact-update', $item->id) }}" class="btn btn-warning">Update Message</a>
+                </div>
+                <div>
+                    <a href="{{ route('contact-delete', $item->id) }}" class="btn btn-danger">Delete Message</a>
+                </div>
+            </div>
         </div>
     @endforeach
 @endsection
