@@ -37,4 +37,13 @@ class ContactsController extends Controller {
 
         return view('messages', ['data' => $data]);
     }
+
+    /**
+     * @param int $id - element ID
+     */
+    public function getOne(int $id) {
+        $contacts = new Contacts();
+        $data = $contacts->find($id);
+        return view('one-message', ['data' => $data]);
+    }
 }

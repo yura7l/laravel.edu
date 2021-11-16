@@ -8,17 +8,17 @@
             <li class="nav-item">
                 <a href="{{ route('home') }}" class="nav-link link-dark">Home</a>
             </li>
-            <li>
+            <li class="nav-item">
                 <a href="{{ route('about') }}" class="nav-link link-dark">About us</a>
             </li>
-            <li>
+            <li class="nav-item">
                 <a href="{{ route('news') }}" class="nav-link link-dark">News</a>
             </li>
-            <li>
-                <a href="{{ route('contacts') }}" class="nav-link link-dark">Contacts</a>
-            </li>
-            <li>
-                <a href="{{ route('contact-list') }}" class="nav-link link-dark">Messages</a>
+            <li class="nav-item dropdown">
+                <a href="{{ route('contacts') }}" class="nav-link link-dark dropdown-toggle" id="contactsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacts</a>
+                <ul class="dropdown-menu" aria-labelledby="contactsDropdown">
+                    <li><a class="dropdown-item" href="{{ route('contact-list') }}">Messages</a></li>
+                </ul>
             </li>
         </ul>
         @show

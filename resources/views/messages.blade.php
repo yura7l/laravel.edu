@@ -8,7 +8,7 @@
         <div class="alert alert-info">
             <h3>{{ $item->name }}</h3>
             <p><small>{{ $item->created_at }}</small></p>
-            <p>{{ $item->message }}</p>
+            <a href="{{ route('contact-single', $item->id) }}" class="btn btn-primary">Read Message</a>
         </div>
     @endforeach
 @endsection
