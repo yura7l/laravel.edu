@@ -10,6 +10,12 @@ class NewsController extends Controller {
     public function submit(NewsRequest $req) {
         $news = new News();
         $news->name = $req->input('name');
+        $news->active = $req->input('active');
+        //$news->active_from = $req->input('active_from'); // TODO: add date picker
+        $news->preview_text = $req->input('preview_text');
+        $news->detail_text = $req->input('detail_text');
+        $news->preview_image = $req->input('preview_image');
+        $news->detail_image = $req->input('detail_image');
 
         $news->save();
 

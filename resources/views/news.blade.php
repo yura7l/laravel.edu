@@ -12,7 +12,7 @@
                         <img src="{{ $item->preview_image }}" alt="{{ $item->name }}">
                     </div>
                     <div class="news__item-body">
-                        <div class="news__item-date">{{ $item->active_from }}</div>
+                        <div class="news__item-date">{{ $item->created_at }}</div>
                         <a href="{{ route('news-detail', $item->id)}}" class="news__item-title">{{ $item->name }}</a>
                         <div class="news__item-text">{{ $item->preview_text }}</div>
                     </div>

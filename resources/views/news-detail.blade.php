@@ -6,7 +6,7 @@
     <div class="news__detail">
         <div class="news__detail-head">
             <h1>{{ $data->name }}</h1>
-            <div class="news__detail-date">{{ $data->active_from }}</div>
+            <div class="news__detail-date">{{ $data->created_at }}</div>
             @if($data->detail_image)
             <div class="news__detail-img">
                 <img src="{{ $data->detail_image }}" alt="{{ $data->name }}">

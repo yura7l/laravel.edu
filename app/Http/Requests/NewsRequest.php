@@ -13,7 +13,7 @@ class NewsRequest extends FormRequest
      */
     public function authorize()
     {
-        return false; // change to true
+        return true;
     }
 
     /**
