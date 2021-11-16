@@ -13,7 +13,7 @@
                     </div>
                     <div class="news__item-body">
                         <div class="news__item-date">{{ $item->active_from }}</div>
-                        <a href="javascript:void(0);" class="news__item-title">{{ $item->name }}</a>
+                        <a href="{{ route('news-detail', $item->id)}}" class="news__item-title">{{ $item->name }}</a>
                         <div class="news__item-text">{{ $item->preview_text }}</div>
                     </div>
                 </div>

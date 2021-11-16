@@ -35,4 +35,13 @@ class NewsController extends Controller {
 
         return view('news', ['data' => $data]);
     }
+
+    /**
+     * @param int $id - element ID
+     */
+    public function getNews(int $id){
+        $news = new News();
+        $data = $news->find($id);
+        return view('news-detail', ['data' => $data]);
+    }
 }

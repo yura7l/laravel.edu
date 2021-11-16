@@ -48,6 +48,10 @@ Route::get(
     '/news',
     'App\Http\Controllers\NewsController@getList'
 )->name('news');
+Route::get(
+    '/news/{id}',
+    'App\Http\Controllers\NewsController@getNews'
+)->name('news-detail');
 Route::get('/news/add', function () {
     return view('news-add');
 })->name('news-add');
