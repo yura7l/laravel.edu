@@ -17,6 +17,7 @@
             <li class="nav-item dropdown">
                 <a href="{{ route('contacts') }}" class="nav-link link-dark dropdown-toggle" id="contactsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacts</a>
                 <ul class="dropdown-menu" aria-labelledby="contactsDropdown">
+                    <li><a class="dropdown-item" href="{{ route('contacts') }}">Get in touch</a></li>
                     <li><a class="dropdown-item" href="{{ route('contact-list') }}">Messages</a></li>
                 </ul>
             </li>
