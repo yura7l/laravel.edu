@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request,
     App\Http\Requests\NewsRequest,
-    App\Models\News;
+    App\Models\News,
+    Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller {
     public function submit(NewsRequest $req) {
@@ -14,8 +15,17 @@ class NewsController extends Controller {
         //$news->active_from = $req->input('active_from'); // TODO: add date picker
         $news->preview_text = $req->input('preview_text');
         $news->detail_text = $req->input('detail_text');
-        $news->preview_image = $req->input('preview_image');
-        $news->detail_image = $req->input('detail_image');
+
+        //dd($req);
+
+        if($req->file('preview_image')){
+            $previevPath = $req->file('preview_image')->store('public/news');
+            $news->preview_image = $previevPath;
+        }
+        if($req->file('detail_image')){
+            $detailPath = $req->file('detail_image')->store('public/news');
+            $news->detail_image = $detailPath;
+        }
 
         $news->save();
 
@@ -39,6 +49,12 @@ class NewsController extends Controller {
          * $data = $news->where('id', '=', '1')->get(); // custom condition (SQL operators)
          */
 
+        foreach ($data as $key => $item){
+            if(Storage::disk()->exists($item->preview_image)){
+                $data[$key]->preview_image = Storage::url($item->preview_image);
+            }
+        }
+
         return view('news', ['data' => $data]);
     }
 
@@ -48,6 +64,11 @@ class NewsController extends Controller {
     public function getNews(int $id){
         $news = new News();
         $data = $news->find($id);
+
+        if(Storage::disk()->exists($data->detail_image)){
+            $data->detail_image = Storage::url($data->detail_image);
+        }
+
         return view('news-detail', ['data' => $data]);
     }
 }
