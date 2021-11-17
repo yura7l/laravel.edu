@@ -48,7 +48,7 @@ class CallbackRequest extends FormRequest
     {
         return [
             '*.required' => 'Поле :attribute є обов\'язковим для заповнення',
-            'phone.min' => 'Поле ім\'я повинно містити щонайменше :min символів'
+            'phone.min' => 'Поле телефон повинно містити щонайменше :min символів'
         ];
     }
 }
