@@ -19,19 +19,21 @@
                 <label for="preview_text" class="form-label">Preview text</label>
                 <textarea class="form-control" id="preview_text" name="preview_text">{{ $data->preview_text }}</textarea>
             </div>
-            <div class="mb-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ $data->preview_image }}" alt="">
-                    <div class="card-body">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" id="preview_image_delete" name="preview_image_delete">
-                            <label class="form-check-label" for="preview_image_delete">
-                                Delete preview picture
-                            </label>
+            @if($data->preview_image)
+                <div class="mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ $data->preview_image }}" alt="">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="preview_image_delete" name="preview_image_delete">
+                                <label class="form-check-label" for="preview_image_delete">
+                                    Delete preview picture
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
             <div class="mb-3">
                 <label for="preview_image" class="form-label">Preview picture</label>
                 <input class="form-control" type="file" id="preview_image" name="preview_image">
@@ -40,20 +42,21 @@
                 <label for="detail_text" class="form-label">Detail text</label>
                 <textarea class="form-control" id="detail_text" name="detail_text">{{ $data->detail_text }}</textarea>
             </div>
-            <div class="mb-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ $data->detail_image }}" alt="">
-                    <div class="card-body">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" id="detail_image_delete" name="detail_image_delete">
-                            <label class="form-check-label" for="detail_image_delete">
-                                Delete detail picture
-                            </label>
+            @if($data->detail_image)
+                <div class="mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ $data->detail_image }}" alt="">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="detail_image_delete" name="detail_image_delete">
+                                <label class="form-check-label" for="detail_image_delete">
+                                    Delete detail picture
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
+            @endif
             <div class="mb-3">
                 <label for="detail_image" class="form-label">Detail picture</label>
                 <input class="form-control" type="file" id="detail_image" name="detail_image">
