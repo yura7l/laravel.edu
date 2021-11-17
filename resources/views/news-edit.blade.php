@@ -23,8 +23,12 @@
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{ $data->preview_image }}" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">Current preview picture</h5>
-                        <p class="card-text">If you want to change preview picture - upload new one using field below.</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="preview_image_delete" name="preview_image_delete">
+                            <label class="form-check-label" for="preview_image_delete">
+                                Delete preview picture
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,10 +44,15 @@
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{ $data->detail_image }}" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">Current detail picture</h5>
-                        <p class="card-text">If you want to change detail picture - upload new one using field below.</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="detail_image_delete" name="detail_image_delete">
+                            <label class="form-check-label" for="detail_image_delete">
+                                Delete detail picture
+                            </label>
+                        </div>
                     </div>
                 </div>
+
             </div>
             <div class="mb-3">
                 <label for="detail_image" class="form-label">Detail picture</label>

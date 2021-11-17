@@ -101,15 +101,17 @@ class NewsController extends Controller {
         $news->preview_text = $req->input('preview_text');
         $news->detail_text = $req->input('detail_text');
 
-        //dd($req);
-
         if($req->file('preview_image')){
             $previevPath = $req->file('preview_image')->store('public/news');
             $news->preview_image = $previevPath;
+        }elseif($req->input('preview_image_delete')){
+            $news->preview_image = '';
         }
         if($req->file('detail_image')){
             $detailPath = $req->file('detail_image')->store('public/news');
             $news->detail_image = $detailPath;
+        }elseif($req->input('detail_image_delete')){
+            $news->detail_image = '';
         }
 
         $news->save();
