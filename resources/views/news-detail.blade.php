@@ -6,7 +6,13 @@
     <div class="news__detail">
         <div class="news__detail-head">
             <h1>{{ $data->name }}</h1>
-            <div class="news__detail-date">{{ $data->created_at }}</div>
+            <div class="news__detail-head-wrapper">
+                <div class="news__detail-date">{{ $data->created_at }}</div>
+                <div class="news__detail-head-buttons">
+                    <a href="{{ route('news-edit', $data->id) }}" class="btn btn-light">Edit</a>
+                    <a href="{{ route('news-delete', $data->id) }}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
             @if($data->detail_image)
             <div class="news__detail-img">
                 <img src="{{ $data->detail_image }}" alt="{{ $data->name }}">

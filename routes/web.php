@@ -59,3 +59,15 @@ Route::post(
     '/news/add/submit',
     'App\Http\Controllers\NewsController@submit'
 )->name('news-add-submit');
+Route::get(
+    '/news/edit/{id}',
+    'App\Http\Controllers\NewsController@updateNews'
+)->name('news-edit');
+Route::post(
+    '/news/edit/{id}',
+    'App\Http\Controllers\NewsController@updateNewsSubmit'
+)->name('news-edit-submit');
+Route::get(
+    '/news/delete/{id}',
+    'App\Http\Controllers\NewsController@deleteNews'
+)->name('news-delete');

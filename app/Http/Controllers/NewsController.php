@@ -71,4 +71,58 @@ class NewsController extends Controller {
 
         return view('news-detail', ['data' => $data]);
     }
+
+    /**
+     * @param int $id - element ID
+     */
+    public function updateNews(int $id) {
+        $news = new News();
+        $data = $news->find($id);
+
+        if(Storage::disk()->exists($data->preview_image)){
+            $data->preview_image = Storage::url($data->preview_image);
+        }
+        if(Storage::disk()->exists($data->detail_image)){
+            $data->detail_image = Storage::url($data->detail_image);
+        }
+
+        return view('news-edit', ['data' => $data]);
+    }
+
+    /**
+     * @param int $id - element ID
+     * @param NewsRequest $req - request data
+     */
+    public function updateNewsSubmit($id, NewsRequest $req) {
+        $news = News::find($id);
+        $news->name = $req->input('name');
+        $news->active = $req->input('active');
+        //$news->active_from = $req->input('active_from'); // TODO: add date picker
+        $news->preview_text = $req->input('preview_text');
+        $news->detail_text = $req->input('detail_text');
+
+        //dd($req);
+
+        if($req->file('preview_image')){
+            $previevPath = $req->file('preview_image')->store('public/news');
+            $news->preview_image = $previevPath;
+        }
+        if($req->file('detail_image')){
+            $detailPath = $req->file('detail_image')->store('public/news');
+            $news->detail_image = $detailPath;
+        }
+
+        $news->save();
+
+        return redirect()->route('news-detail', $id)->with('success', 'News saved');
+    }
+
+    /**
+     * @param int $id - element ID
+     */
+    public function deleteNews($id) {
+        News::find($id)->delete();
+
+        return redirect()->route('news')->with('success', 'News deleted!');
+    }
 }
