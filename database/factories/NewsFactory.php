@@ -16,6 +16,8 @@ class NewsFactory extends Factory
     {
         return [
             'name' => $this->faker->text(40),
+            'active' => 1,
+            'active_from' => '2021-11-23 00:00:00',
             'preview_text' => $this->faker->paragraphs(1, true),
             'detail_text' => $this->faker->paragraphs(5, true)
         ];
