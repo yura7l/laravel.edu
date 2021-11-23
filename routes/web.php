@@ -14,6 +14,13 @@ Route::get('/contacts', function () {
     return view('contacts');
 })->name('contacts');
 
+Route::get('/login', function () {
+    return view('auth');
+})->name('login');
+Route::get('/sign-up', function () {
+    return view('signup');
+})->name('sign-up');
+
 Route::get(
     '/contacts/all/{id}',
     'App\Http\Controllers\ContactsController@getMessage'
