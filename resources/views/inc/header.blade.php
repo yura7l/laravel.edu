@@ -5,6 +5,7 @@
                 <li class="nav-item"><a href="{{ route('home') }}" class="nav-link px-2 text-white">Home</a></li>
                 <li class="nav-item"><a href="{{ route('about') }}" class="nav-link px-2 text-white">About us</a></li>
                 <li class="nav-item"><a href="{{ route('news') }}" class="nav-link px-2 text-white">News</a></li>
+                <li class="nav-item"><a href="{{ route('gallery.index') }}" class="nav-link px-2 text-white">Gallery</a></li>
                 <li class="nav-item dropdown">
                     <a href="{{ route('contacts') }}" class="nav-link px-2 text-white dropdown-toggle" id="contactsDropdownHeader" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacts</a>
                     <ul class="dropdown-menu" aria-labelledby="contactsDropdownHeader">

@@ -3,6 +3,7 @@
         <li class="nav-item"><a href="{{ route('home') }}" class="nav-link px-2 text-muted">Home</a></li>
         <li class="nav-item"><a href="{{ route('about') }}" class="nav-link px-2 text-muted">About us</a></li>
         <li class="nav-item"><a href="{{ route('news') }}" class="nav-link px-2 text-muted">News</a></li>
+        <li class="nav-item"><a href="{{ route('gallery.index') }}" class="nav-link px-2 text-muted">Gallery</a></li>
         <li class="nav-item dropdown">
             <a href="{{ route('contacts') }}" class="nav-link px-2 text-muted dropdown-toggle" id="contactsDropdownFooter" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacts</a>
             <ul class="dropdown-menu" aria-labelledby="contactsDropdownFooter">

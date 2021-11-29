@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GalleryController;
 
 Route::get('/', function () {
     return view('home');
@@ -78,3 +79,5 @@ Route::get(
     '/news/delete/{id}',
     'App\Http\Controllers\NewsController@deleteNews'
 )->name('news-delete');
+
+Route::resource('gallery', GalleryController::class);

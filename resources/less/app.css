@@ -73,4 +73,20 @@ body {
 .news__detail-body h2 {
   margin-bottom: 15px;
 }
+.gallery {
+  margin: 40px 0;
+}
+.gallery__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+.gallery__list-item {
+  cursor: pointer;
+}
+.gallery__image {
+  max-width: 100%;
+}
 /*# sourceMappingURL=app.css.map */

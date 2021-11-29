@@ -14,6 +14,9 @@
             <li class="nav-item">
                 <a href="{{ route('news') }}" class="nav-link link-dark">News</a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('gallery.index') }}" class="nav-link link-dark">Gallery</a>
+            </li>
             <li class="nav-item dropdown">
                 <a href="{{ route('contacts') }}" class="nav-link link-dark dropdown-toggle" id="contactsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacts</a>
                 <ul class="dropdown-menu" aria-labelledby="contactsDropdown">

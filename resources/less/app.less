@@ -84,3 +84,20 @@ body{
         }
     }
 }
+
+.gallery{
+    margin: 40px 0;
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        &-item{
+            cursor: pointer;
+        }
+    }
+    &__image{
+        max-width: 100%;
+    }
+}
