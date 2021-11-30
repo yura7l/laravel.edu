@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Gallery;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -15,6 +16,11 @@ class GalleryController extends Controller
     public function index()
     {
         $data = Gallery::all();
+        foreach ($data as $i => $item){
+            if(Storage::disk()->exists($item->source)){
+                $data[$i]->source = Storage::url($item->source);
+            }
+        }
         return view('gallery', ['data' => $data]);
     }
 
@@ -36,7 +42,15 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $gallery = new Gallery();
+        $gallery->caption = $request->input('caption');
+        if($request->file('source')){
+            $sourcePath = $request->file('source')->store('public/gallery');
+            $gallery->source = $sourcePath;
+        }
+        $gallery->save();
+
+        return redirect()->route('gallery.index')->with('success', 'Your photo was added');
     }
 
     /**

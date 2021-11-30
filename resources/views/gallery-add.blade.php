@@ -6,7 +6,7 @@
     <div class="gallery">
         <h1>Add a photo</h1>
         <div class="gallery__form">
-            <form action="{{ route('news-add-submit') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="source" class="form-label">Photo</label>
