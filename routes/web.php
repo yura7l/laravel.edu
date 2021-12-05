@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleryController;
 
@@ -81,3 +82,7 @@ Route::get(
 )->name('news-delete');
 
 Route::resource('gallery', GalleryController::class);
+
+Route::get('/insert', function (){
+    DB::insert('insert into blog(title, content, author) values(?, ?, ?)', ['testing raw queries', 'Lorem ipsum dolor', 1]);
+});
