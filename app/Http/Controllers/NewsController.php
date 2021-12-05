@@ -55,7 +55,9 @@ class NewsController extends Controller {
             }
         }
 
-        return view('news', ['data' => $data]);
+        $people = ['Yurii', 'Igor', 'Ira', 'Diana'];
+
+        return view('news', ['data' => compact('people')]);
     }
 
     /**
