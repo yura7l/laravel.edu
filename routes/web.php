@@ -96,7 +96,11 @@ Route::resource('gallery', GalleryController::class);
         return $result->title;
     }
 });*/
-Route::get('/update', function (){
+/*Route::get('/update', function (){
     $updated = DB::update('update blog set title = "updated title" where id = ?', [1]);
     return $updated;
+});*/
+Route::get('/delete', function (){
+    $result = DB::delete('delete from blog where id = ?', [1]);
+    return $result;
 });
