@@ -5,14 +5,7 @@
 @section('content')
     <div class="news__list">
         <h1>All news</h1>
-        @if(count($data) && count($data['people']))
-            <ul>
-            @foreach($data['people'] as $person)
-                <li>{{ $person }}</li>
-            @endforeach
-            </ul>
-        @endif
-        {{--@if(count($data))
+        @if(count($data))
             @foreach($data as $item)
                 <div class="news__item">
                     <div class="news__item-img">
@@ -27,7 +20,7 @@
             @endforeach
         @else
             <div class="alert alert-warning">There's no news yet. We're working on this.</div>
-        @endif--}}
+        @endif
     </div>
     <a href="{{ route('news-add') }}" class="btn btn-primary">Add news</a>
 @endsection
