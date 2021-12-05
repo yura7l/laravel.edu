@@ -100,7 +100,7 @@ Route::resource('gallery', GalleryController::class);
     $updated = DB::update('update blog set title = "updated title" where id = ?', [1]);
     return $updated;
 });*/
-Route::get('/delete', function (){
+/*Route::get('/delete', function (){
     $result = DB::delete('delete from blog where id = ?', [1]);
     return $result;
-});
+});*/
