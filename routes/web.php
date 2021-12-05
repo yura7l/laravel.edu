@@ -90,9 +90,13 @@ Route::resource('gallery', GalleryController::class);
 /*Route::get('/insert', function (){
     DB::insert('insert into blog(title, content, author) values(?, ?, ?)', ['testing raw queries', 'Lorem ipsum dolor', 1]);
 });*/
-Route::get('/read', function (){
+/*Route::get('/read', function (){
     $results = DB::select('select * from blog where id = ?', [1]);
     foreach ($results as $result){
         return $result->title;
     }
+});*/
+Route::get('/update', function (){
+    $updated = DB::update('update blog set title = "updated title" where id = ?', [1]);
+    return $updated;
 });
