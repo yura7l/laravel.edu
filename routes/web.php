@@ -89,7 +89,7 @@ Route::resource('gallery', GalleryController::class);
  * DB Raw SQL queries
  */
 /*Route::get('/insert', function (){
-    DB::insert('insert into blog(title, content, author) values(?, ?, ?)', ['testing raw queries', 'Lorem ipsum dolor', 1]);
+    DB::insert('insert into blog(title, content, author) values(?, ?, ?)', ['another one for test', 'Lorem ipsum dolor', 1]);
 });*/
 /*Route::get('/read', function (){
     $results = DB::select('select * from blog where id = ?', [1]);
@@ -110,13 +110,17 @@ Route::resource('gallery', GalleryController::class);
  * Eloquent ORM
  * (object-relational mapper)
  */
-Route::get('/read', function (){
+/*Route::get('/read', function (){
     $posts = Blog::all();
     foreach ($posts as $post) {
         return $post->title;
     }
-});
-Route::get('/find', function (){
+});*/
+/*Route::get('/find', function (){
     $post = Blog::find(2);
     return $post->title;
+})*/;
+Route::get('/findwhere', function (){
+    $posts = Blog::where('id', 3)->orderBy('id', 'desc')->take(1)->get();
+    return $posts;
 });
