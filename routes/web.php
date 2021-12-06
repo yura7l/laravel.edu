@@ -144,7 +144,9 @@ Route::get('/basicupdate', function (){
     $post->author = 1;
     $post->save();
 });*/
-Route::get('/create', function (){
+/*Route::get('/create', function (){
     Blog::create(['title'=>'Creating new post', 'content'=>'random body text', 'author'=>1]);
-
+});*/
+Route::get('/update', function (){
+    Blog::where('id', 6)->where('author', 1)->update(['title'=>'new title using update method']);
 });
