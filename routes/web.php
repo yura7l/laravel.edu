@@ -120,7 +120,15 @@ Route::resource('gallery', GalleryController::class);
     $post = Blog::find(2);
     return $post->title;
 })*/;
-Route::get('/findwhere', function (){
+/*Route::get('/findwhere', function (){
     $posts = Blog::where('id', 3)->orderBy('id', 'desc')->take(1)->get();
+    return $posts;
+});*/
+Route::get('/findmore', function (){
+    /**
+     * Methods that returning NotFoundException if not found
+     */
+    //$posts = Blog::findOrFail(1);
+    $posts = Blog::where('id', '<', 4)->firstOrFail();
     return $posts;
 });
