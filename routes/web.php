@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleryController;
+use App\Models\Blog;
 
 Route::get('/', function () {
     return view('home');
@@ -104,3 +105,18 @@ Route::resource('gallery', GalleryController::class);
     $result = DB::delete('delete from blog where id = ?', [1]);
     return $result;
 });*/
+
+/**
+ * Eloquent ORM
+ * (object-relational mapper)
+ */
+Route::get('/read', function (){
+    $posts = Blog::all();
+    foreach ($posts as $post) {
+        return $post->title;
+    }
+});
+Route::get('/find', function (){
+    $post = Blog::find(2);
+    return $post->title;
+});

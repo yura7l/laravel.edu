@@ -15,4 +15,10 @@ class Blog extends Model
      * (plural lowercase model name)
      */
     protected $table = 'blog';
+
+    /**
+     * This is how to change name of primary key in table
+     * (by default it's "id")
+     */
+    //protected $primaryKey = 'post_id';
 }
