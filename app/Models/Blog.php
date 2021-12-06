@@ -21,4 +21,10 @@ class Blog extends Model
      * (by default it's "id")
      */
     //protected $primaryKey = 'post_id';
+
+    protected $fillable = [
+        'title',
+        'content',
+        'author'
+    ];
 }

@@ -130,7 +130,7 @@ Route::resource('gallery', GalleryController::class);
     $posts = Blog::where('id', '<', 4)->firstOrFail();
     return $posts;
 });*/
-Route::get('/basicinsert', function (){
+/*Route::get('/basicinsert', function (){
     $post = new Blog;
     $post->title = 'New Eloquent ORM title';
     $post->content = 'Test body';
@@ -143,4 +143,8 @@ Route::get('/basicupdate', function (){
     $post->content = 'Test body';
     $post->author = 1;
     $post->save();
+});*/
+Route::get('/create', function (){
+    Blog::create(['title'=>'Creating new post', 'content'=>'random body text', 'author'=>1]);
+
 });
