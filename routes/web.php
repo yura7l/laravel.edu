@@ -124,11 +124,23 @@ Route::resource('gallery', GalleryController::class);
     $posts = Blog::where('id', 3)->orderBy('id', 'desc')->take(1)->get();
     return $posts;
 });*/
-Route::get('/findmore', function (){
-    /**
-     * Methods that returning NotFoundException if not found
-     */
+/*Route::get('/findmore', function (){
+    // Methods that returning NotFoundException if not found
     //$posts = Blog::findOrFail(1);
     $posts = Blog::where('id', '<', 4)->firstOrFail();
     return $posts;
+});*/
+Route::get('/basicinsert', function (){
+    $post = new Blog;
+    $post->title = 'New Eloquent ORM title';
+    $post->content = 'Test body';
+    $post->author = 1;
+    $post->save();
+});
+Route::get('/basicupdate', function (){
+    $post = Blog::find(5);
+    $post->title = 'New Eloquent ORM title UPDATE';
+    $post->content = 'Test body';
+    $post->author = 1;
+    $post->save();
 });
