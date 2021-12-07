@@ -162,7 +162,10 @@ Route::get('/basicupdate', function (){
 /*Route::get('/softdelete', function (){
     $post = Blog::find(3)->delete();
 });*/
-Route::get('/readsoftdelete', function (){
+/*Route::get('/readsoftdelete', function (){
     $post = Blog::withTrashed()->where('id', 3)->get();
     return $post;
+});*/
+Route::get('/restore', function (){
+    Blog::withTrashed()->where('id', 3)->restore();
 });

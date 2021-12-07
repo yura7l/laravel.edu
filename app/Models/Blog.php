@@ -28,6 +28,9 @@ class Blog extends Model
      */
     //protected $primaryKey = 'post_id';
 
+    /**
+     * Adding column for date of deleting (soft deleting)
+     */
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
