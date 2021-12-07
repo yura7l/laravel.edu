@@ -166,6 +166,9 @@ Route::get('/basicupdate', function (){
     $post = Blog::withTrashed()->where('id', 3)->get();
     return $post;
 });*/
-Route::get('/restore', function (){
+/*Route::get('/restore', function (){
     Blog::withTrashed()->where('id', 3)->restore();
+});*/
+Route::get('/forcedelete', function (){
+    Blog::withTrashed()->where('id', 3)->forceDelete();
 });
