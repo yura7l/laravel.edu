@@ -4,10 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Blog extends Model
 {
     use HasFactory;
+
+    /**
+     * Using class for soft deleting
+     */
+    use SoftDeletes;
 
     /**
      * Telling that table name is blog
@@ -21,6 +27,8 @@ class Blog extends Model
      * (by default it's "id")
      */
     //protected $primaryKey = 'post_id';
+
+    protected $dates = ['deleted_at'];
 
     protected $fillable = [
         'title',
