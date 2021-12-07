@@ -159,6 +159,10 @@ Route::get('/basicupdate', function (){
 /*Route::get('/destroy', function (){
     Blog::destroy([1,2]);
 });*/
-Route::get('/softdelete', function (){
+/*Route::get('/softdelete', function (){
     $post = Blog::find(3)->delete();
+});*/
+Route::get('/readsoftdelete', function (){
+    $post = Blog::withTrashed()->where('id', 3)->get();
+    return $post;
 });
