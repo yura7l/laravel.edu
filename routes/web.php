@@ -170,5 +170,5 @@ Route::get('/basicupdate', function (){
     Blog::withTrashed()->where('id', 3)->restore();
 });*/
 Route::get('/forcedelete', function (){
-    Blog::withTrashed()->where('id', 3)->forceDelete();
+    Blog::onlyTrashed()->where('id', 3)->forceDelete();
 });
