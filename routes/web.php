@@ -147,6 +147,15 @@ Route::get('/basicupdate', function (){
 /*Route::get('/create', function (){
     Blog::create(['title'=>'Creating new post', 'content'=>'random body text', 'author'=>1]);
 });*/
-Route::get('/update', function (){
+/*Route::get('/update', function (){
     Blog::where('id', 6)->where('author', 1)->update(['title'=>'new title using update method']);
-});
+});*/
+/*Route::get('/delete', function (){
+    $post = Blog::find(2);
+    $post->delete();
+
+    //Blog::where('author', 1)->delete();
+});*/
+/*Route::get('/destroy', function (){
+    Blog::destroy([1,2]);
+});*/
