@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleryController;
 use App\Models\Blog;
+use \App\Models\User;
 
 Route::get('/', function () {
     return view('home');
@@ -169,6 +170,13 @@ Route::get('/basicupdate', function (){
 /*Route::get('/restore', function (){
     Blog::withTrashed()->where('id', 3)->restore();
 });*/
-Route::get('/forcedelete', function (){
+/*Route::get('/forcedelete', function (){
     Blog::onlyTrashed()->where('id', 3)->forceDelete();
+});*/
+
+/**
+ * Eloquent Relationships
+ */
+Route::get('/user/{id}/post', function ($id){
+    return User::find($id)->post;
 });
