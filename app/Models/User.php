@@ -46,4 +46,8 @@ class User extends Authenticatable
         //return $this->hasOne('App\Models\Blog', 'author');
         return $this->hasOne('App\Models\Blog');
     }
+
+    public function posts(){
+        return $this->hasMany('App\Models\Blog');
+    }
 }
