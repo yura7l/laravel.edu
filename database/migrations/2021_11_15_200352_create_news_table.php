@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateNewsTable extends Migration
@@ -15,13 +16,13 @@ class CreateNewsTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->boolean('active');
-            $table->dateTime('active_from');
+            $table->boolean('active')->default(true);
+            $table->dateTime('active_from')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('name');
-            $table->text('preview_text');
-            $table->longText('detail_text');
-            $table->string('preview_image');
-            $table->string('detail_image');
+            $table->text('preview_text')->nullable();
+            $table->longText('detail_text')->nullable();
+            $table->string('preview_image')->nullable();
+            $table->string('detail_image')->nullable();
             $table->timestamps();
         });
     }
