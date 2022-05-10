@@ -9,7 +9,9 @@
             @foreach($data as $item)
                 <div class="news__item">
                     <div class="news__item-img">
-                        <img src="{{ $item->preview_image }}" alt="{{ $item->name }}">
+                        @if(isset($item->preview_image))
+                            <img src="{{ $item->preview_image }}" alt="{{ $item->name }}">
+                        @endif
                     </div>
                     <div class="news__item-body">
                         <div class="news__item-date">{{ $item->created_at }}</div>
